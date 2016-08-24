@@ -1,0 +1,7 @@
+name 'augustus'
+maintainer 'Eagle Genomics Ltd'
+maintainer_email 'chef@eaglegenomics.com'
+license 'apachev2'
+description 'Installs/Configures augustus'
+long_description 'Installs/Configures augustus'
+version '0.1.0'
