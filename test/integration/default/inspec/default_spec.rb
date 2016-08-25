@@ -10,5 +10,9 @@ end
 
 describe command('augustus') do
   its('stdout') { should match '3.2.2' }
-end 
- 
+end
+
+describe file('/opt/augustus-3.2.2/config') do
+  it { should be_writable }
+  it { should be_directory }
+end

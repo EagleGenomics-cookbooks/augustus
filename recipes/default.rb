@@ -27,7 +27,7 @@ end
 apt_repository 'us.archive.ubuntu.com' do
   uri 'http://us.archive.ubuntu.com/ubuntu'
   distribution 'vivid'
-  components ['main', 'universe']           
+  components %w(main universe)
 end
 # packages that need the alder apt-repository
 package ['bamtools', 'libbamtools-dev'] do
@@ -35,7 +35,7 @@ package ['bamtools', 'libbamtools-dev'] do
 end
 # remove the entry to avoid corrupting apt
 apt_repository 'us.archive.ubuntu.com' do
-    action :remove
+  action :remove
 end
 
 remote_file "#{Chef::Config[:file_cache_path]}/#{node['augustus']['filename']}" do
@@ -55,4 +55,13 @@ bash 'Install augustus' do
     make install
   EOH
   not_if { ::File.exist?("#{node['augustus']['install_path']}/bin/augustus") }
+end
+
+magic_shell_environment 'AUGUSTUS_CONFIG_PATH' do
+  value node['augustus']['config']
+end
+
+directory node['augustus']['config'] do
+  mode 0777
+  recursive true
 end

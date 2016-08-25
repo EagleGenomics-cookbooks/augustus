@@ -10,3 +10,4 @@ version '1.0.0'
 
 depends 'build-essential'
 depends 'apt'
+depends 'magic_shell'
