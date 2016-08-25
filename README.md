@@ -10,7 +10,7 @@ Requirements
 
 ## Platform:
 
-* Ubunutu 14.4
+* Ubuntu 14.4
 
 Notes
 =====
