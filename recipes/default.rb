@@ -65,3 +65,12 @@ directory node['augustus']['config'] do
   mode 0777
   recursive true
 end
+
+# getSeq and load2db symlinks end up dangling, this breaks other recipes being run which read all links. Quick fix:
+link '/usr/local/bin/getSeq' do
+  action :delete
+end
+
+link '/usr/local/bin/load2db' do
+  action :delete
+end
