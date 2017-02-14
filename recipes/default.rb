@@ -62,7 +62,7 @@ magic_shell_environment 'AUGUSTUS_CONFIG_PATH' do
 end
 
 directory node['augustus']['config'] do
-  mode 0777
+  mode 0o777
   recursive true
 end
 
