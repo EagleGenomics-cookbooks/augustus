@@ -6,7 +6,7 @@ description 'Installs/Configures augustus'
 long_description 'Installs/Configures augustus'
 source_url 'https://github.com/EagleGenomics-cookbooks/augustus'
 issues_url 'https://github.com/EagleGenomics-cookbooks/augustus/issues'
-version '1.0.3'
+version '1.0.4'
 
 depends 'build-essential'
 depends 'apt'

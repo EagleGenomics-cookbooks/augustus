@@ -45,11 +45,11 @@ end
 execute "Untar #{node['augustus']['filename']}" do
   command "tar -xzvf #{node['augustus']['filename']}"
   cwd Chef::Config[:file_cache_path]
-  not_if { ::File.exist?("#{Chef::Config[:file_cache_path]}/#{node['augustus']['dirname']}") }
+  not_if { ::File.exist?("#{Chef::Config[:file_cache_path]}/augustus") }
 end
 
 bash 'Install augustus' do
-  cwd "#{Chef::Config[:file_cache_path]}/#{node['augustus']['dirname']}"
+  cwd "#{Chef::Config[:file_cache_path]}/augustus"
   code <<-EOH
     make
     make install
